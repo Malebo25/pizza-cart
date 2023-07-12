@@ -1,54 +1,50 @@
 body {
-   background-color: aqua;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: aqua;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.pizza{
-    /*box-modedl*/
-    border:5px solid #cad2c5;
-    padding: 1em;
-    margin:1em;
-    margin-bottom: 0.5em;
-    margin-left:0em;
-    border-radius: 0.25em;
-    /* in-line -next to each other*/
-    /*
+.pizza {
+  /*box-modedl*/
+  border: 5px solid #cad2c5;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 0em;
+  border-radius: 0.25em;
+  /* in-line -next to each other*/
+  /*
     width:20%;
     display:inline-block;
     min-height:30em;*/
-
+}
+.smallpizzadiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+.shoppingCart {
+  background-color: antiquewhite;
 }
 
-
-
-.medium_pizza{
-    
-    background-color: darkseagreen;
-    
+.medium_pizza {
+  background-color: darkseagreen;
 }
 
-.large_pizza{
-    background-color: bisque;
-    
+.large_pizza {
+  background-color: bisque;
 }
 
-.small_pizza{
-    background-color: brown;
-
+.small_pizza {
+  background-color: brown;
 }
 
-.contact_us{
-    background-color: #cad2c5;
+.contact_us {
+  background-color: #cad2c5;
 }
-@media (min-width:960px) {
-    body {
-        background-color:white;
-        
-     }
-     .pizzas{
-        display: flex;
-    }
-     
+@media (min-width: 960px) {
+  body {
+    background-color: white;
+  }
+  .pizzas {
+    display: flex;
+  }
 }
-
-     

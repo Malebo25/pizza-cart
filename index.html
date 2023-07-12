@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>perfect-pizza</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-
-
-<body>
+  <body>
     <h1>Perfect Pizza</h1>
-    <div class="pizzas">
+    <h4>Pizza Orders</h4>
+    <div class="pizza shoppingCart">
+      <h2>shoppingCart</h2>
 
-        <div class="pizza small_pizza">
-            <h2>Small Pizza</h2>
-            <img src="pizza (1).png" width="100">
-            <h3>
-                R49.00
-            </h3>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolo
-            </div>
+      <div x-data="{ smallPizza :0 } ">
+        <div class="smallpizzadiv">
+          <span> Small </span><button @click="smallPizza+=31">+</button>
+          <button @click="smallPizza-=31">-</button>
+          <div class="Pizzacount" x-text="smallPizza"></div>
         </div>
+      </div>
 
-
-        <div class="pizza medium_pizza">
-            <h2>Medium Pizza</h2>
-            <img src="pizza (1).png" width="125">
-            <h3>
-                R89.90
-            </h3>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dol
-            </div>
+      <div x-data="{ mediumPizza : 0 } ">
+        <div class="smallpizzadiv">
+          <span> Medium</span><button @click="mediumPizza+=58">+</button>
+          <button @click="mediumPizza-=58">-</button>
+          <div class="Pizzacount" x-text="mediumPizza"></div>
         </div>
+      </div>
 
-
-        <div class="pizza large_pizza">
-            <h2>Large Pizza</h2>
-            <img src="pizza (1).png" width="150">
-            <h3>
-                R139
-            </h3>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolo
-            </div>
+      <div x-data="{ largePizza : 0 } ">
+        <div class="smallpizzadiv">
+          <span> Small </span><button @click="largePizza+=87">+</button>
+          <button @click="largePizza-=87">-</button>
+          <div class="Pizzacount" x-text="largePizza"></div>
         </div>
-
+      </div>
     </div>
+    <div class="pizzas">
+      <div class="pizza small_pizza">
+        <h2>Small Pizza</h2>
+        <img src="pizza (1).png" width="100" />
+        <h3>R31</h3>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolo
+        </div>
 
+        <button @click="smallPizza+=smallPizza" >
+          Buy
+        </button>
+      </div>
 
+      <div class="pizza medium_pizza">
+        <h2>Medium Pizza</h2>
+        <img src="pizza (1).png" width="125" />
+        <h3>R58</h3>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dol
+        </div>
+      </div>
+
+      <div class="pizza large_pizza">
+        <h2>Large Pizza</h2>
+        <img src="pizza (1).png" width="150" />
+        <h3>R87</h3>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolo
+        </div>
+      </div>
+    </div>
 
     <div class="pizza contact_us">
-        <h2>Contact details</h2>
-        Contact us at:0619624295 info@perfectpizza.co.za
-
+      <h2>Contact details</h2>
+      Contact us at:0619624295 info@perfectpizza.co.za
     </div>
-
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+  </body>
 </html>
