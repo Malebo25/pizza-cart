@@ -11,65 +11,70 @@
   <body>
     <h1>Perfect Pizza</h1>
     <h4>Pizza Orders</h4>
-    <div class="pizza shoppingCart">
-      <h2>shoppingCart</h2>
 
-      <div x-data="{ smallPizza :0 } ">
+    <div x-data="{ smallPizza :0, mediumPizza:0, largePizza:0, Total:0} ">
+      <div class="pizza shoppingCart">
+        <h2>shoppingCart</h2>
+
         <div class="smallpizzadiv">
-          <span> Small </span><button @click="smallPizza+=31">+</button>
-          <button @click="smallPizza-=31">-</button>
+          <span> Small </span
+          ><button @click="smallPizza+=31,Total+=31">+</button>
+          <button @click="smallPizza-=31,Total-=31">-</button>
           <div class="Pizzacount" x-text="smallPizza"></div>
         </div>
-      </div>
 
-      <div x-data="{ mediumPizza : 0 } ">
         <div class="smallpizzadiv">
-          <span> Medium</span><button @click="mediumPizza+=58">+</button>
-          <button @click="mediumPizza-=58">-</button>
+          <span> Medium</span
+          ><button @click="mediumPizza+=58,Total+=58">+</button>
+          <button @click="mediumPizza-=58,Total-=58">-</button>
           <div class="Pizzacount" x-text="mediumPizza"></div>
         </div>
-      </div>
 
-      <div x-data="{ largePizza : 0 } ">
         <div class="smallpizzadiv">
-          <span> Small </span><button @click="largePizza+=87">+</button>
-          <button @click="largePizza-=87">-</button>
+          <span> large </span
+          ><button @click="largePizza+=87,Total+=87">+</button>
+          <button @click="largePizza-=87,Total-=87">-</button>
           <div class="Pizzacount" x-text="largePizza"></div>
         </div>
-      </div>
-    </div>
-    <div class="pizzas">
-      <div class="pizza small_pizza">
-        <h2>Small Pizza</h2>
-        <img src="pizza (1).png" width="100" />
-        <h3>R31</h3>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolo
-        </div>
-
-        <button @click="smallPizza+=smallPizza" >
-          Buy
-        </button>
-      </div>
-
-      <div class="pizza medium_pizza">
-        <h2>Medium Pizza</h2>
-        <img src="pizza (1).png" width="125" />
-        <h3>R58</h3>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dol
+        <h2>Total Cost : <span x-text="Total"> </span></h2>
+        <div class="checkout">
+          <button @click="">checkout</button>
         </div>
       </div>
 
-      <div class="pizza large_pizza">
-        <h2>Large Pizza</h2>
-        <img src="pizza (1).png" width="150" />
-        <h3>R87</h3>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolo
+      <div class="pizzas">
+        <div class="pizza small_pizza">
+          <h2>Small Pizza</h2>
+          <img src="pizza (1).png" width="100" />
+          <h3>R31</h3>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolo
+          </div>
+
+          <button @click="smallPizza += 31">Buy</button>
+        </div>
+
+        <div class="pizza medium_pizza">
+          <h2>Medium Pizza</h2>
+          <img src="pizza (1).png" width="125" />
+          <h3>R58</h3>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dol
+          </div>
+          <button @click="mediumPizza += 58">Buy</button>
+        </div>
+
+        <div class="pizza large_pizza">
+          <h2>Large Pizza</h2>
+          <img src="pizza (1).png" width="150" />
+          <h3>R87</h3>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolo
+          </div>
+          <button @click="largePizza += 87">Buy</button>
         </div>
       </div>
     </div>
