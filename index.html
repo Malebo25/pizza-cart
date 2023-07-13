@@ -14,7 +14,9 @@
 
     <div x-data="{ smallPizza :0, mediumPizza:0, largePizza:0, Total:0} ">
       <div class="pizza shoppingCart">
-        <h2>shoppingCart</h2>
+        <center>
+          <h2>shoppingCart</h2>
+        </center>
 
         <div class="smallpizzadiv">
           <span> Small </span
@@ -36,10 +38,27 @@
           <button @click="largePizza-=87,Total-=87">-</button>
           <div class="Pizzacount" x-text="largePizza"></div>
         </div>
-        <h2>Total Cost : <span x-text="Total"> </span></h2>
-        <div class="checkout">
-          <button @click="">checkout</button>
-        </div>
+        <center>
+          <h6>Total Cost : <span x-text="Total"> </span></h6>
+          <div class="checkout">
+            <div x-data="{ show: false }">
+              <div x-show="show">
+                <form class="textbox" action="">
+                  <label for="name">Pay Now</label>
+
+                  <input
+                    type="text"
+                    name="name"
+                    id=""
+                    class="nameText"
+                    value=""
+                  />
+                </form>
+              </div>
+              <button @click="show=!show">checkout</button>
+            </div>
+          </div>
+        </center>
       </div>
 
       <div class="pizzas">
@@ -52,7 +71,7 @@
             eiusmod tempor incididunt ut labore et dolo
           </div>
 
-          <button @click="smallPizza += 31">Buy</button>
+          <button @click="smallPizza += 31,Total+=31">Buy</button>
         </div>
 
         <div class="pizza medium_pizza">
