@@ -12,50 +12,51 @@
     <h1>Perfect Pizza</h1>
     <h4>Pizza Orders</h4>
 
-    <div x-data="{ smallPizza :0, mediumPizza:0, largePizza:0, Total:0} ">
+    <div x-data="pizza">
       <div class="pizza shoppingCart">
         <center>
           <h2>shoppingCart</h2>
         </center>
 
         <div class="smallpizzadiv">
-          <span> Small </span
-          ><button @click="smallPizza+=31,Total+=31">+</button>
-          <button @click="smallPizza-=31,Total-=31">-</button>
+          <span> Small </span><button @click="increment('small', 31)">+</button>
+          <button @click="decrement('small', 31)">-</button>
           <div class="Pizzacount" x-text="smallPizza"></div>
         </div>
 
         <div class="smallpizzadiv">
           <span> Medium</span
-          ><button @click="mediumPizza+=58,Total+=58">+</button>
-          <button @click="mediumPizza-=58,Total-=58">-</button>
+          ><button @click="increment('medium', 58)">+</button>
+          <button @click="decrement('medium', 58)">-</button>
           <div class="Pizzacount" x-text="mediumPizza"></div>
         </div>
 
         <div class="smallpizzadiv">
-          <span> large </span
-          ><button @click="largePizza+=87,Total+=87">+</button>
-          <button @click="largePizza-=87,Total-=87">-</button>
+          <span> large </span><button @click="increment('large', 78)">+</button>
+          <button @click="decrement('large', 78)">-</button>
           <div class="Pizzacount" x-text="largePizza"></div>
         </div>
+
         <center>
           <h6>Total Cost : <span x-text="Total"> </span></h6>
           <div class="checkout">
-            <div x-data="{ show: false }">
-              <div x-show="show">
-                <form class="textbox" action="">
-                  <label for="name">Pay Now</label>
-
-                  <input
-                    type="text"
-                    name="name"
-                    id=""
-                    class="nameText"
-                    value=""
-                  />
-                </form>
-              </div>
-              <button @click="show=!show">checkout</button>
+            <div x-show="!showCheckout">
+              <button @click="checkout">Checkout</button>
+            </div>
+            <div x-show="showCheckout">
+              <h1 x-text="message"></h1>
+              <form class="textbox" action="">
+                <label for="name">Pay Now</label>
+                <input
+                  type="number"
+                  name="paymentAmount"
+                  id=""
+                  class="nameText"
+                  x-model="paymentAmount"
+                  value=""
+                />
+                <button @click="processPayment">Pay</button>
+              </form>
             </div>
           </div>
         </center>
@@ -71,7 +72,7 @@
             eiusmod tempor incididunt ut labore et dolo
           </div>
 
-          <button @click="smallPizza += 31,Total+=31">Buy</button>
+          <button @click="increment('small', 31)">Buy</button>
         </div>
 
         <div class="pizza medium_pizza">
@@ -82,7 +83,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dol
           </div>
-          <button @click="mediumPizza += 58,Total+=58">Buy</button>
+          <button @click="increment('medium', 58)">Buy</button>
         </div>
 
         <div class="pizza large_pizza">
@@ -93,7 +94,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolo
           </div>
-          <button @click="largePizza += 87,Total+=87">Buy</button>
+          <button @click="increment('large', 78)">Buy</button>
         </div>
       </div>
     </div>
@@ -102,9 +103,8 @@
       <h2>Contact details</h2>
       Contact us at:0619624295 info@perfectpizza.co.za
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
-      defer
-    ></script>
+
+    <script src="cart.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
   </body>
 </html>
